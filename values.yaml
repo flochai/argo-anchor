@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: harbor.flochai.com/anchor/anchor
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8501
+
+ingress:
+  enabled: true
+  className: traefik          # K3s (traefik)
+  hosts:
+    - host: anchor.flochai.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+        - anchor.flochai.com
+      secretName: anchor-tls   # for https

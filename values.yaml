@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: harbor.flochai.com/anchor/anchor
-  tag: c03a5bf35e0acf518daa6616d0ebae585c6818de
+  tag: dc2f113c1656a9afb9367622b5ddc58c6cdd08a0
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
